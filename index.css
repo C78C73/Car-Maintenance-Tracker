@@ -20,3 +20,14 @@ body {
 .loginRegisterButtons button {
     color: rgb(19, 109, 188);
 }
+
+#rightsReserved {
+    color: white;
+}
+
+.ending {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
