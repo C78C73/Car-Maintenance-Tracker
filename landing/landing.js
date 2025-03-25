@@ -42,3 +42,10 @@ document.querySelectorAll('.car-link').forEach(carLink => {
         window.location.href = `../flowchart/flowchart.html?car=${encodeURIComponent(carName)}`;
     });
 });
+
+// Handle "Sign Out" button click
+document.querySelector('.dropdown-menu a[href="../landing/landing.html"]').addEventListener('click', (event) => {
+    event.preventDefault(); // Prevent default anchor behavior
+    // Redirect to index.html
+    window.location.href = '../index.html';
+});

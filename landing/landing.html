@@ -5,68 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Home</title>
     <link rel="stylesheet" href="landing.css">
-    <style>
-        /* Ensure dropdown menu is visible */
-        .dropdown-menu {
-            display: none; /* Initially hidden */
-            position: absolute;
-            top: 50px;
-            right: 10px;
-            background-color: white; /* Light background for visibility */
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            z-index: 1000;
-        }
-
-        .dropdown-menu.active {
-            display: block; /* Show dropdown when active */
-        }
-
-        .dropdown-menu a {
-            display: block;
-            padding: 10px 15px;
-            text-decoration: none;
-            color: black;
-        }
-
-        .dropdown-menu a:hover {
-            background-color: #f0f0f0;
-        }
-
-        /* Adjust for dark mode */
-        body.dark-mode .dropdown-menu {
-            background-color: #333;
-            color: white;
-            border-color: #555;
-        }
-
-        body.dark-mode .dropdown-menu a {
-            color: white;
-        }
-
-        body.dark-mode .dropdown-menu a:hover {
-            background-color: #444;
-        }
-
-        /* Alert styling */
-        .alert {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #4caf50;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 5px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            display: none; /* Hidden by default */
-            z-index: 2000;
-        }
-
-        .alert.show {
-            display: block; /* Show alert when active */
-        }
-    </style>
 </head>
 <body>
     <!-- Top-right profile/settings menu -->
@@ -77,6 +15,7 @@
         <div class="dropdown-menu">
             <a href="../profile_settings/profile.html" class="dropdown-link">Profile</a>
             <a href="../profile_settings/settings.html" class="dropdown-link">Settings</a>
+            <a href="../landing/landing.html" class="dropdown-link">Sign Out</a>
         </div>
     </div>
 

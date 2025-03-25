@@ -83,29 +83,52 @@ body.light-mode .container {
 /* Dropdown menu styling */
 .dropdown-menu {
     display: none; /* Initially hidden */
-    flex-direction: column;
-    background-color: #1a1a1a;
-    border: 1px solid #00b300;
-    border-radius: 8px;
-    margin-top: 10px; /* Position below the profile picture */
-    padding: 10px;
     position: absolute;
-    top: 70px; /* Adjusted to appear below the profile picture */
-    right: 0;
-    z-index: 10; /* Ensure it appears above other elements */
+    top: 50px;
+    right: 10px;
+    background-color: white; /* Light background for visibility */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    min-width: 150px; /* Ensure enough width for "Sign Out" */
+    white-space: nowrap; /* Prevent text wrapping */
+}
+
+.dropdown-menu.active {
+    display: block; /* Show dropdown when active */
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: black;
+    text-align: left; /* Align text to the left */
+}
+
+.dropdown-menu a:hover {
+    background-color: #f0f0f0;
+}
+
+/* Adjust for dark mode */
+body.dark-mode .dropdown-menu {
+    background-color: #333;
+    color: white;
+    border-color: #555;
+}
+
+body.dark-mode .dropdown-menu a {
+    color: white;
+}
+
+body.dark-mode .dropdown-menu a:hover {
+    background-color: #444;
 }
 
 body.light-mode .dropdown-menu {
     background-color: #f0f0f0; /* Light dropdown background */
     border: 1px solid #00b300;
-}
-
-.dropdown-menu.active {
-    display: flex; /* Show dropdown when the "active" class is added */
-}
-
-.profile-menu.active .dropdown-menu {
-    display: flex; /* Show dropdown when the menu is active */
 }
 
 .dropdown-link {
@@ -158,4 +181,22 @@ ul#carList {
 
 .car-link:hover {
     color: #009900;
+}
+
+/* Alert Styling */
+.alert {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: none; /* Hidden by default */
+    z-index: 2000;
+}
+
+.alert.show {
+    display: block; /* Show alert when active */
 }
