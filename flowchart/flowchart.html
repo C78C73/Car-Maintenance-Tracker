@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Details</title>
+    <link rel="stylesheet" href="flowchart.css">
+</head>
+<body>
+    <!-- Back Button -->
+    <a href="../landing/landing.html" class="back-button">Back</a>
+
+    <div class="container">
+        <h1>Car Details for <span id="carNickname">Unknown</span></h1>
+
+        <!-- Section for car details -->
+        <div id="carDetailsSection">
+            <form id="carDetailsForm">
+                <label for="carMake">Make:</label>
+                <input type="text" id="carMake" name="carMake" placeholder="Enter car make">
+
+                <label for="carModel">Model:</label>
+                <input type="text" id="carModel" name="carModel" placeholder="Enter car model">
+
+                <label for="carYear">Year:</label>
+                <input type="number" id="carYear" name="carYear" placeholder="Enter car year">
+
+                <label for="carNicknameInput">Nickname:</label>
+                <input type="text" id="carNicknameInput" name="carNicknameInput" placeholder="Enter car nickname">
+
+                <button type="button" id="saveCarDetails">Save Car Details</button>
+            </form>
+        </div>
+
+        <!-- Flowchart Section -->
+        <div id="flowchartSection">
+            <h2>Repair History Flowchart</h2>
+            <div id="repairFlowchart">
+                <!-- Flowchart content dynamically generated here -->
+                <ul id="flowchartList">
+                    <!-- Existing flowchart items will be added here -->
+                </ul>
+            </div>
+
+            <!-- Form to add new flowchart entries -->
+            <form id="addFlowchartEntryForm">
+                <label for="entryDate">Date:</label>
+                <input type="date" id="entryDate" name="entryDate" required>
+
+                <label for="entryTitle">Title:</label>
+                <input type="text" id="entryTitle" name="entryTitle" placeholder="Enter repair title" required>
+
+                <label for="entryDescription">Description:</label>
+                <input type="text" id="entryDescription" name="entryDescription" placeholder="Enter repair description" required>
+
+                <button type="button" id="addFlowchartEntry">Add Entry</button>
+            </form>
+
+            <button type="button" id="saveFlowchart">Save Flowchart</button>
+        </div>
+
+        <!-- Modal for viewing flowchart entry details -->
+        <div id="entryModal" class="hidden">
+            <h3 id="modalTitle"></h3>
+            <p><strong>Date:</strong> <span id="modalDate"></span></p>
+            <p><strong>Description:</strong> <span id="modalDescription"></span></p>
+            <button type="button" id="closeModal">Close</button>
+        </div>
+    </div>
+
+    <script src="../theme.js" defer></script>
+    <script src="flowchart.js" defer></script>
+</body>
+</html>
