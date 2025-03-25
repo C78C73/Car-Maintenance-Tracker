@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings</title>
+    <link rel="stylesheet" href="profile_settings.css">
+    <style>
+        .alert {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #4caf50;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: none;
+            z-index: 2000;
+        }
+
+        .alert.show {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- Back Button -->
+    <a href="../landing/landing.html" class="back-button">Back</a>
+
+    <div class="container">
+        <h1>Settings</h1>
+        <form id="settingsForm">
+            <label for="themeToggle">Dark/Light Mode:</label>
+            <select id="themeToggle" name="themeToggle">
+                <option value="dark">Dark Mode</option>
+                <option value="light">Light Mode</option>
+            </select>
+
+            <button type="button" class="save-btn" id="saveSettings">Save Changes</button>
+        </form>
+    </div>
+
+    <!-- Add Alert to Settings Page -->
+    <div id="alert" class="alert">Changes Saved!</div>
+
+    <script src="../theme.js"></script> <!-- Shared theme logic -->
+    <script src="profile_settings.js"></script> <!-- Page-specific logic -->
+</body>
+</html>

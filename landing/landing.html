@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Home</title>
+    <link rel="stylesheet" href="landing.css">
+</head>
+<body>
+    <!-- Top-right profile/settings menu -->
+    <div class="profile-menu">
+        <div class="profile-circle">
+            <img src="images/default-profile.png" alt="Profile" class="profile-pic">
+        </div>
+        <div class="dropdown-menu">
+            <a href="../profile_settings/profile.html" class="dropdown-link">Profile</a>
+            <a href="../profile_settings/settings.html" class="dropdown-link">Settings</a>
+            <a href="../landing/landing.html" class="dropdown-link">Sign Out</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1>Welcome, User!</h1>
+        <button id="addCar" class="add-car-btn">Add Car</button>
+        <h2>Your Cars</h2>
+        <ul id="carList">
+            <li><a href="#" class="car-link" data-car="Candy">Candy</a></li>
+            <li><a href="#" class="car-link" data-car="Beast">Beast</a></li>
+            <li><a href="#" class="car-link" data-car="Speedy">Speedy</a></li>
+        </ul>
+    </div>
+    
+    <!-- Alert for changes saved -->
+    <div id="alert" class="alert">Changes Saved!</div>
+
+    <script src="../theme.js" defer></script> <!-- Shared theme logic -->
+    <script src="landing.js" defer></script>
+</body>
+</html>

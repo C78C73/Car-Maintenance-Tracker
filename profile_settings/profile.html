@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="profile_settings.css">
+    <style>
+        .alert {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #4caf50;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: none;
+            z-index: 2000;
+        }
+
+        .alert.show {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- Back Button -->
+    <a href="../landing/landing.html" class="back-button">Back</a>
+
+    <div class="container">
+        <h1>Profile Settings</h1>
+        <form id="profileForm">
+            <label for="profilePic">Profile Picture:</label>
+            <input type="file" id="profilePic" name="profilePic" accept="image/*">
+
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" placeholder="Enter your username">
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email">
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password">
+
+            <button type="button" class="save-btn" id="saveProfile">Save Changes</button>
+        </form>
+    </div>
+
+    <!-- Alert for changes saved -->
+    <div id="alert" class="alert">Changes Saved!</div>
+
+    <script src="profile_settings.js" defer></script> <!-- Page-specific logic -->
+    <script src="../theme.js" defer></script> <!-- Shared theme logic -->
+</body>
+</html>
