@@ -5,3 +5,14 @@
 
 - fix the save alert on the flowchart
 - fix the light and dark mode on the on the flowchart page
+- make the database work with the app now
+
+## To run
+To deploy your project, run this command
+`firebase deploy`
+
+## Problems
+- Had references to "storage" when using "cloud firestore"
+- Had to re-auth
+- Getting the DB to work
+- CSS
