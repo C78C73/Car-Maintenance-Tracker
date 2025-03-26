@@ -1,121 +1,72 @@
-/* General body styling */
 body {
-    background-color: #0d0d0d; /* Dark background */
-    color: #d4d4d4; /* Light text for contrast */
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Full viewport height */
-    overflow: hidden; /* Prevent scrolling */
+    height: 100vh;
+    margin: 0;
 }
 
-/* Form container styling */
 .container {
-    text-align: center;
-    background-color: #1a1a1a; /* Slightly lighter dark background */
-    border-radius: 15px;
-    padding: 30px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-    width: 90%;
-    max-width: 400px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+.password-container {
     position: relative;
-}
-
-/* Heading styling */
-.container h1 {
-    font-size: 2rem;
-    color: #00ff00; /* Bright green for emphasis */
-    margin-bottom: 20px;
-}
-
-/* Input field styling */
-.container input {
-    width: 100%; /* Full width of the container */
-    max-width: 300px; /* Match the max width of the button */
-    padding: 10px 15px; /* Add even padding on left and right */
-    margin: 10px auto; /* Center the input fields horizontally */
-    border: 1px solid #00b300;
-    border-radius: 8px;
-    background-color: #0d0d0d;
-    color: #d4d4d4;
-    font-size: 1rem;
-    display: block; /* Ensure the inputs are block-level elements */
-    box-sizing: border-box; /* Include padding in width calculation */
-}
-
-/* Button styling */
-.container button {
     width: 100%;
-    background: linear-gradient(90deg, #00b300, #009900); /* Gradient background */
-    color: #ffffff; /* White text */
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
     border: none;
-    padding: 15px;
-    font-size: 1rem;
-    font-weight: bold;
-    border-radius: 8px;
     cursor: pointer;
-    transition: all 0.3s ease, box-shadow 0.3s ease;
 }
 
-.container button:hover {
-    background: linear-gradient(90deg, #009900, #00b300); /* Reverse gradient on hover */
-    box-shadow: 0 0 20px #00ff00, 0 0 40px #00ff00; /* Glowing effect */
-    transform: scale(1.05); /* Slight zoom effect */
+.small-toggle {
+    font-size: 16px;  /* Smaller font size */
+    padding: 2px 5px; /* Less padding */
 }
 
-/* Top-right button styling */
 .top-right-buttons {
     position: absolute;
-    top: 20px;
-    right: 20px;
-    display: flex;
-    gap: 15px;
+    top: 10px;
+    right: 10px;
 }
 
 .top-right-buttons a {
-    background: linear-gradient(90deg, #00b300, #009900); /* Gradient background */
-    color: #ffffff; /* White text */
-    padding: 10px 20px;
-    font-size: 0.9rem;
-    font-weight: bold;
-    border-radius: 8px;
+    margin-left: 10px;
     text-decoration: none;
-    transition: all 0.3s ease, box-shadow 0.3s ease;
+    color: #333;
 }
 
-.top-right-buttons a:hover {
-    background: linear-gradient(90deg, #009900, #00b300); /* Reverse gradient on hover */
-    box-shadow: 0 0 20px #00ff00, 0 0 40px #00ff00; /* Glowing effect */
-    transform: scale(1.05); /* Slight zoom effect */
+input {
+    width: 100%;
+    padding: 8px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
 }
 
-/* Center the bottom button */
-.bottom-buttons {
-    margin-top: 20px;
-    display: flex;
-    justify-content: center; /* Center the button horizontally */
-}
-
-.container button {
-    width: 100%; /* Match the width of input fields */
-    max-width: 300px; /* Set a max width to align with input fields */
-    background: linear-gradient(90deg, #00b300, #009900); /* Gradient background */
-    color: #ffffff; /* White text */
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
     border: none;
-    padding: 15px;
-    font-size: 1rem;
-    font-weight: bold;
-    border-radius: 8px;
+    border-radius: 4px;
     cursor: pointer;
-    transition: all 0.3s ease, box-shadow 0.3s ease;
-    text-align: center;
 }
 
-.container button:hover {
-    background: linear-gradient(90deg, #009900, #00b300); /* Reverse gradient on hover */
-    box-shadow: 0 0 20px #00ff00, 0 0 40px #00ff00; /* Glowing effect */
-    transform: scale(1.05); /* Slight zoom effect */
+button:hover {
+    background-color: #45a049;
 }

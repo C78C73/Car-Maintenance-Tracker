@@ -3,8 +3,11 @@
 
 [Click here](https://c78c73.github.io/Car-Maintenance-Tracker/)
 
-- fix the save alert on the flowchart
-- fix the light and dark mode on the on the flowchart page
+## To-DO
+- fix registration and login, and redirecting after logging in
+- fix the save alert on the flowchart\
+- fix the flowchart
+- fix the light and dark mode on all pages
 - make the database work with the app now
 
 ## To run
@@ -16,3 +19,6 @@ To deploy your project, run this command
 - Had to re-auth
 - Getting the DB to work
 - CSS
+
+## Notes
+- Authentication section in firebase controls logging in
