@@ -13,8 +13,11 @@
 ## To run
 To deploy your project, run this command
 `firebase deploy`
+`ctrl` + `shift` + `r` to hard refresh cache to see new changes
 
 ## Problems
+- **login doenst work if the password is unhidden
+- make unhide button smaller
 - Had references to "storage" when using "cloud firestore"
 - Had to re-auth
 - Getting the DB to work

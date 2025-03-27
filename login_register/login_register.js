@@ -1,5 +1,9 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.5.0/firebase-app.js";
-import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.5.0/firebase-auth.js";
+import { 
+    getAuth, 
+    signInWithEmailAndPassword, 
+    createUserWithEmailAndPassword 
+} from "https://www.gstatic.com/firebasejs/11.5.0/firebase-auth.js";
 
 const firebaseConfig = {
     apiKey: "AIzaSyBK7AQTFWXSHPQj93uuauypL9ZtIDz1d_Y",
@@ -14,16 +18,37 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
 document.addEventListener('DOMContentLoaded', () => {
+    const setupTogglePassword = (inputId, toggleId) => {
+        const passwordInput = document.getElementById(inputId);
+        const togglePassword = document.getElementById(toggleId);
+
+        if (togglePassword && passwordInput) {
+            togglePassword.addEventListener("click", () => {
+                if (passwordInput.type === "password") {
+                    passwordInput.type = "text";
+                    togglePassword.innerHTML = '🗖';
+                } else {
+                    passwordInput.type = "password";
+                    togglePassword.innerHTML = '👁';
+                }
+            });
+        }
+    };
+
     const loginForm = document.getElementById('loginForm');
-    const togglePassword = document.getElementById('togglePassword');
+    const registerForm = document.getElementById('registerForm');
+    const customPopup = document.getElementById('customPopup');
+    const closePopupButton = document.getElementById('closePopup');
 
     if (loginForm) {
+        setupTogglePassword('loginPassword', 'togglePassword');
+
         loginForm.addEventListener('submit', async (event) => {
             event.preventDefault(); 
 
-            const emailInput = loginForm.querySelector('input[type="email"]');
-            const passwordInput = loginForm.querySelector('input[type="password"]');
-            
+            const emailInput = document.getElementById('loginEmail');
+            const passwordInput = document.getElementById('loginPassword');
+
             const email = emailInput.value;
             const password = passwordInput.value;
 
@@ -31,9 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const userCredential = await signInWithEmailAndPassword(auth, email, password);
                 
                 console.log("User logged in:", userCredential.user);
-                alert("Login successful!");
-                
-                window.location.href = '../landing.html';
+                customPopup.style.display = 'flex';
             } catch (error) {
                 switch(error.code) {
                     case 'auth/user-not-found':
@@ -53,17 +76,54 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    if (togglePassword) {
-        togglePassword.addEventListener("click", () => {
-            const passwordField = document.getElementById("password");
-            
-            if (passwordField.type === "password") {
-                passwordField.type = "text";
-                togglePassword.innerHTML = '🗖';
-            } else {
-                passwordField.type = "password";
-                togglePassword.innerHTML = '👁';
+    if (registerForm) {
+        setupTogglePassword('registerPassword', 'toggleRegisterPassword');
+        setupTogglePassword('confirmPassword', 'toggleConfirmPassword');
+
+        registerForm.addEventListener('submit', async (event) => {
+            event.preventDefault(); 
+
+            const emailInput = document.getElementById('registerEmail');
+            const passwordInput = document.getElementById('registerPassword');
+            const confirmPasswordInput = document.getElementById('confirmPassword');
+
+            const email = emailInput.value;
+            const password = passwordInput.value;
+            const confirmPassword = confirmPasswordInput.value;
+
+            if (password !== confirmPassword) {
+                alert("Passwords do not match!");
+                return;
             }
+
+            try {
+                const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+                
+                console.log("User registered:", userCredential.user);
+                customPopup.style.display = 'flex';
+            } catch (error) {
+                switch(error.code) {
+                    case 'auth/email-already-in-use':
+                        alert("Email is already registered. Please use a different email or log in.");
+                        break;
+                    case 'auth/invalid-email':
+                        alert("Invalid email address.");
+                        break;
+                    case 'auth/weak-password':
+                        alert("Password is too weak. Please use a stronger password.");
+                        break;
+                    default:
+                        alert("Error registering: " + error.message);
+                        console.error("Registration error:", error);
+                }
+            }
+        });
+    }
+
+    if (closePopupButton) {
+        closePopupButton.addEventListener('click', () => {
+            customPopup.style.display = 'none';
+            window.location.href = '../landing/landing.html';
         });
     }
 });
