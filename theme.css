@@ -1,0 +1,71 @@
+/* Base styles */
+:root {
+    --background-color-light: #ffffff;
+    --text-color-light: #000000;
+    --background-color-dark: #121212;
+    --text-color-dark: #ffffff;
+    --accent-color-light: #f0f0f0;
+    --accent-color-dark: #1e1e1e;
+}
+
+/* Light Mode */
+.light-mode {
+    background-color: var(--background-color-light);
+    color: var(--text-color-light);
+}
+
+.light-mode .container {
+    background-color: var(--accent-color-light);
+}
+
+.light-mode input, 
+.light-mode select, 
+.light-mode button {
+    background-color: #ffffff;
+    color: #000000;
+    border: 1px solid #cccccc;
+}
+
+.light-mode .back-button {
+    color: #000000;
+}
+
+/* Dark Mode */
+.dark-mode {
+    background-color: var(--background-color-dark);
+    color: var(--text-color-dark);
+}
+
+.dark-mode .container {
+    background-color: var(--accent-color-dark);
+}
+
+.dark-mode input, 
+.dark-mode select, 
+.dark-mode button {
+    background-color: #2c2c2c;
+    color: #ffffff;
+    border: 1px solid #444444;
+}
+
+.dark-mode .back-button {
+    color: #ffffff;
+}
+
+/* Alert styling for both modes */
+.alert {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: none;
+    z-index: 2000;
+}
+
+.alert.show {
+    display: block;
+}

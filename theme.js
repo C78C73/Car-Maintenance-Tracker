@@ -1,34 +1,45 @@
-// Reference the theme toggle dropdown
-const themeToggle = document.getElementById('themeToggle');
-const alert = document.getElementById('alert');
+const savedTheme = localStorage.getItem('theme') || 'dark';
 
-// Function to show "Changes Saved" alert
+function updateTheme(theme) {
+    localStorage.setItem('theme', theme);
+    document.body.className = theme + '-mode';
+}
+
+function initializeTheme() {
+    updateTheme(savedTheme);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const themeToggle = document.getElementById('themeToggle');
+    const alert = document.getElementById('alert');
+
+    initializeTheme();
+
+    if (themeToggle) {
+        themeToggle.value = savedTheme;
+
+        themeToggle.addEventListener('change', () => {
+            const selectedTheme = themeToggle.value;
+            updateTheme(selectedTheme);
+            
+            if (alert) {
+                alert.textContent = 'Theme updated!';
+                alert.classList.add('show');
+                setTimeout(() => {
+                    alert.classList.remove('show');
+                }, 3000);
+            }
+        });
+    }
+});
+
 function showAlert(message) {
+    const alert = document.getElementById('alert');
     if (alert) {
         alert.textContent = message;
         alert.classList.add('show');
         setTimeout(() => {
             alert.classList.remove('show');
         }, 3000);
-    } else {
-        console.warn('Alert element not found');
     }
-}
-
-// Save Settings Button
-const saveSettingsButton = document.getElementById('saveSettings');
-if (saveSettingsButton) {
-    saveSettingsButton.addEventListener('click', () => {
-        console.log('Settings changes saved!');
-        showAlert('Settings changes saved!');
-    });
-}
-
-// Profile Save Button
-const saveProfileButton = document.getElementById('saveProfile');
-if (saveProfileButton) {
-    saveProfileButton.addEventListener('click', () => {
-        console.log('Profile changes saved!');
-        showAlert('Profile changes saved!');
-    });
 }
