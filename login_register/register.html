@@ -3,25 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register Page</title>
+    <title>Register - Car Maintenance Tracker</title>
     <link rel="stylesheet" href="login_register.css">
+    <link rel="stylesheet" href="../theme.css">
 </head>
 <body>
     <div class="top-right-buttons">
-        <a href="login.html" class="button-link">Login</a>
-        <a href="../index.html" class="button-link">Home</a>
+        <a href="../index.html" class="nav-button">Home</a>
+        <a href="login.html" class="nav-button">Login</a>
     </div>
+
     <div class="container">
         <h1>Register</h1>
-        <form>
-            <input type="email" placeholder="Email" required>
-            <input type="password" placeholder="Password" required>
-            <div class="bottom-buttons">
-                <button type="submit">Register</button>
+        <form id="registerForm">
+            <input type="email" id="registerEmail" placeholder="Email" required>
+            <div class="password-container">
+                <input type="password" id="registerPassword" placeholder="Password" required>
+                <button type="button" class="toggle-password" id="toggleRegisterPassword">👁</button>
             </div>
+            <div class="password-container">
+                <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+                <button type="button" class="toggle-password" id="toggleConfirmPassword">👁</button>
+            </div>
+            <button type="submit">Register</button>
         </form>
     </div>
 
-    <script src="login_register.js"></script>
+    <div id="customPopup" class="custom-popup">
+        <div class="popup-content">
+            <h2>Registration Successful</h2>
+            <p>Welcome to Car Maintenance Tracker!</p>
+            <button id="closePopup">Close</button>
+        </div>
+    </div>
+
+    <script type="module" src="login_register.js"></script>
+    <script src="../theme.js" defer></script>
 </body>
 </html>

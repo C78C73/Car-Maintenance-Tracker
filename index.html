@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Car Maintenance Tracker</title>
     <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="theme.css">
 </head>
 <body>
     <div class="container">
@@ -22,6 +23,32 @@
         <p id="rightsReserved">2025</p>
     </div>
     
-    <script src="scripts.js"></script>
+    <script type="module" src="scripts.js"></script>
+    <!-- <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.5.0/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.5.0/firebase-analytics.js";
+        import { getFirestore } from "https://www.gstatic.com/firebasejs/11.5.0/firebase-firestore.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+          apiKey: "AIzaSyBK7AQTFWXSHPQj93uuauypL9ZtIDz1d_Y",
+          authDomain: "car-maintenance-tracker-fac0a.firebaseapp.com",
+          projectId: "car-maintenance-tracker-fac0a",
+          //storageBucket: "car-maintenance-tracker-fac0a.firebasestorage.app",
+          messagingSenderId: "4022406592",
+          appId: "1:4022406592:web:7b6f2e13842dca36780c25",
+          measurementId: "G-JT5GDF6VQS"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore();
+        const analytics = getAnalytics(app);
+      </script> -->
+      <script src="theme.js" defer></script>
 </body>
 </html>

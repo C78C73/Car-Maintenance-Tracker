@@ -3,5 +3,25 @@
 
 [Click here](https://c78c73.github.io/Car-Maintenance-Tracker/)
 
+## To-Do
 - fix the save alert on the flowchart
-- fix the light and dark mode on the on the flowchart page
+- refactor html pages, remove unnecessary logic
+- fix the flowchart
+- connect the DB to the stuff i have in the collections
+   - make the database work with the app now
+
+## To run
+To deploy your project, run this command
+`firebase deploy`
+`ctrl` + `shift` + `r` to hard refresh cache to see new changes
+
+## Problems
+- **login doesn't work if the password is unhidden
+- make unhide button smaller
+- Had references to "storage" when using "cloud firestore"
+- Had to re-auth
+- Getting the DB to work
+- CSS
+
+## Notes
+- Authentication section in firebase controls logging in
